@@ -1,10 +1,12 @@
 import React, {useState} from 'react';
 import {Text, View, Button,} from 'react-native';
 import CompanyData from './components/CompanyData';
+import User from './components/User';
 
 const App= () => {
   // state data cannot be shared, instead we share props.
   let data = 10;
+ 
   const fruit = (val: string) => {
     console.warn("function called", val)
     data = 20;
@@ -15,6 +17,7 @@ const App= () => {
     setName("Subash")
   }
 
+  
   return (
    <View>
     <Text style={{fontSize:30}}>Hello React native</Text>
@@ -31,7 +34,8 @@ const App= () => {
     <CompanyData />
     <UserData />
 
-    
+    <User data={data} name={name}/>
+
    </View>
   );
 }
